@@ -1,0 +1,11 @@
+{
+  "Name": "Slime Hutch Winery Interior",
+  "Author": "Kara",
+  "Version": "1.0.0",
+  "Description": "Changes the interior of the Slime Hutch to a Winery",
+  "UniqueID": "Kara.SlimeHutchWinery",
+  "UpdateKeys": [ "Nexus:20156" ],
+  "ContentPackFor": {
+    "UniqueID": "Pathoschild.ContentPatcher"
+  }
+}

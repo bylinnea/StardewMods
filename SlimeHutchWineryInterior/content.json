@@ -1,0 +1,65 @@
+{
+  "Format": "1.29.0",
+
+  "ConfigSchema": {
+      "WineryType": {
+        "AllowValues": "Upgradable,Finished",
+        "Default": "Upgradable"
+    },
+    "UpstairsType": {
+      "AllowValues": "Empty,Furnished",
+      "Default": "Empty"
+  }
+  },
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "Maps/SlimeHutch",
+      "FromFile": "assets/WineryBase{{WineryType}}.tmx"
+    },
+    {
+        "Action": "EditMap",
+        "Target": "Maps/SlimeHutch",
+        "FromFile": "assets/WineryUpstairs{{UpstairsType}}.tmx",
+        "FromArea": { "X": 3, "Y": 2, "Width": 12, "Height": 17 },
+        "ToArea": { "X": 3, "Y": 2, "Width": 12, "Height": 17 },
+        "PatchMode": "Replace",
+        "When": {"FarmhouseUpgrade": "2, 3", "WineryType": "Upgradable"}
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/SlimeHutch",
+      "FromFile": "assets/WineryUpstairs{{UpstairsType}}.tmx",
+      "FromArea": { "X": 3, "Y": 2, "Width": 12, "Height": 17 },
+      "ToArea": { "X": 3, "Y": 2, "Width": 12, "Height": 17 },
+      "PatchMode": "Replace",
+      "When": {"WineryType": "Finished"}
+  },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/SlimeHutch",
+      "MapProperties": {
+        "DayTiles": "Front 6 3 256 Front 6 4 288 Front 11 3 256 Front 11 4 288",
+        "NightTiles": "Front 6 3 1253 Front 6 4 1285 Front 11 3 1253 Front 11 4 1285"
+      },
+      "When": {"FarmhouseUpgrade": "2, 3", "WineryType": "Upgradable"}
+  },
+  {
+    "Action": "EditMap",
+    "Target": "Maps/SlimeHutch",
+    "FromFile": "assets/WineryDownstairs.tmx",
+    "FromArea": { "X": 0, "Y": 32, "Width": 30, "Height": 23 },
+    "ToArea": { "X": 0, "Y": 32, "Width": 30, "Height": 23 },
+    "PatchMode": "Replace",
+    "When": {"FarmhouseUpgrade": "3", "WineryType": "Upgradable"}
+},
+    {
+      "Action": "EditMap",
+      "Target": "Maps/SlimeHutch",
+      "MapProperties": {
+          "CanCaskHere": "T"
+      },
+      "When": {"FarmhouseUpgrade": "3", "WineryType": "Upgradable"}
+    }
+  ]
+} 
