@@ -1,0 +1,10 @@
+{
+  "Name": "Useful Hats",
+  "Author": "ByLinnea",
+  "Version": "0.1.0",
+  "Description": "",
+  "UniqueID": "byLinnea.UsefulHats",
+  "EntryDll": "UsefulHats.dll",
+  "MinimumApiVersion": "4.0.0" ,
+  "UpdateKeys": []
+}
