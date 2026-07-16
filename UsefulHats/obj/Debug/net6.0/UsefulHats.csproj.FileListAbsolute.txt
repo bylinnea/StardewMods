@@ -1,9 +1,0 @@
-C:\0_code\mods\StardewMods\UsefulHats\bin\Debug\net6.0\UsefulHats.deps.json
-C:\0_code\mods\StardewMods\UsefulHats\bin\Debug\net6.0\UsefulHats.dll
-C:\0_code\mods\StardewMods\UsefulHats\obj\Debug\net6.0\UsefulHats.csproj.AssemblyReference.cache
-C:\0_code\mods\StardewMods\UsefulHats\obj\Debug\net6.0\UsefulHats.GeneratedMSBuildEditorConfig.editorconfig
-C:\0_code\mods\StardewMods\UsefulHats\obj\Debug\net6.0\UsefulHats.AssemblyInfoInputs.cache
-C:\0_code\mods\StardewMods\UsefulHats\obj\Debug\net6.0\UsefulHats.AssemblyInfo.cs
-C:\0_code\mods\StardewMods\UsefulHats\obj\Debug\net6.0\UsefulHats.csproj.CoreCompileInputs.cache
-C:\0_code\mods\StardewMods\UsefulHats\obj\Debug\net6.0\UsefulHats.sourcelink.json
-C:\0_code\mods\StardewMods\UsefulHats\obj\Debug\net6.0\UsefulHats.dll
