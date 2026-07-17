@@ -8,14 +8,17 @@ namespace UsefulHats
 {
     public class ModEntry : Mod
     {
+        private ModConfig Config = null!;
         private const SButton LogHatKey = SButton.F5;
 
         private const string HatBuffId = "byLinnea.UsefulHats_HatBuff";
 
-                private const string BlueRibbonId = "BlueRibbon";
+        private string? lastAppliedHatId;
 
         public override void Entry(IModHelper helper)
         {
+            this.Config = this.Helper.ReadConfig<ModConfig>();
+
             this.Monitor.Log("Useful Hats loaded!", LogLevel.Debug);
 
             helper.Events.Input.ButtonPressed += this.OnButtonPressed;
@@ -31,27 +34,46 @@ namespace UsefulHats
             if (!e.IsMultipleOf(15))
                 return;
 
-            string? wornHatId = Game1.player.hat.Value?.ItemId;
-            bool shouldHaveBuff = wornHatId == BlueRibbonId;
+            Hat? wornHat = Game1.player.hat.Value;
+            string? wornHatId = wornHat?.ItemId;
+
+            HatStats? stats = null;
+            if (wornHatId != null)
+                this.Config.Hats.TryGetValue(wornHatId, out stats);
+
             bool hasBuff = Game1.player.hasBuff(HatBuffId);
-            if (shouldHaveBuff && !hasBuff)
+
+            if (stats is null)
+            {
+                if (hasBuff)
+                {
+                    this.Monitor.Log($"Removed {lastAppliedHatId}.", LogLevel.Debug);
+                    Game1.player.buffs.Remove(HatBuffId);
+                    lastAppliedHatId = null;
+                }
+            }
+            else if (!hasBuff || lastAppliedHatId != wornHatId)
             {
                 Buff buff = new Buff(
                     id: HatBuffId,
-                    displayName: "Blue Ribbon",
+                    displayName: wornHat!.DisplayName,
                     duration: Buff.ENDLESS,
                     effects: new BuffEffects
                     {
-                        FishingLevel = { 1 }
+                        FarmingLevel = {stats.Farming},
+                        FishingLevel = {stats.Fishing},
+                        MiningLevel = {stats.Mining},
+                        ForagingLevel = {stats.Foraging},
+                        LuckLevel = {stats.Luck},
+                        Attack = {stats.Attack},
+                        Defense = {stats.Defense},
+                        Speed = {stats.Speed},
+                        MaxStamina = {stats.MaxStamina},
+                        MagneticRadius = {stats.MagneticRadius}
                     });
-
                 Game1.player.applyBuff(buff);
-                this.Monitor.Log("Applied Fishing Blue Ribbon (+1 Fishing).", LogLevel.Debug);
-            }
-            else if (!shouldHaveBuff && hasBuff)
-            {
-                Game1.player.buffs.Remove(HatBuffId);
-                this.Monitor.Log("Removed Blue Ribbon buff.", LogLevel.Debug);
+                this.Monitor.Log($"Applied {wornHat.DisplayName} buff",LogLevel.Debug);
+                lastAppliedHatId = wornHatId;
             }
         }
         private void OnButtonPressed(object? sender, ButtonPressedEventArgs e)
