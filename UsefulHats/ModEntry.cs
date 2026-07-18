@@ -69,7 +69,8 @@ namespace UsefulHats
                         Defense = {stats.Defense},
                         Speed = {stats.Speed},
                         MaxStamina = {stats.MaxStamina},
-                        MagneticRadius = {stats.MagneticRadius}
+                        MagneticRadius = {stats.MagneticRadius},
+                        Immunity = {stats.Immunity}
                     });
                 Game1.player.applyBuff(buff);
                 this.Monitor.Log($"Applied {wornHat.DisplayName} buff",LogLevel.Debug);
