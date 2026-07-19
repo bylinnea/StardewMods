@@ -1,10 +1,10 @@
 {
   "Name": "Useful Hats",
   "Author": "ByLinnea",
-  "Version": "0.1.0",
-  "Description": "",
+  "Version": "1.0.0",
+  "Description": "Every hat gives themed stat buffs while worn. The rarer the hat, the stronger the buff. Fully configurable, works with custom hats too.",
   "UniqueID": "byLinnea.UsefulHats",
   "EntryDll": "UsefulHats.dll",
-  "MinimumApiVersion": "4.0.0" ,
+  "MinimumApiVersion": "4.0.0",
   "UpdateKeys": []
 }
