@@ -1,6 +1,6 @@
 # Useful Hats
 
-A [Stardew Valley](https://www.stardewvalley.net/) mod that makes every hat in the game actually do something. Each of the 121 obtainable vanilla hats gives a small themed stat buff while worn. The Fishing Hat helps you fish, the Hard Hat protects you in the mines, and the Leprechaun Hat makes you lucky. The rarer the hat, the stronger the buff.
+A [Stardew Valley](https://www.stardewvalley.net/) mod that makes every hat in the game actually do something. Available on [Nexus](https://www.nexusmods.com/stardewvalley/mods/49384). Each of the 121 obtainable vanilla hats gives a small themed stat buff while worn. The Fishing Hat helps you fish, the Hard Hat protects you in the mines, and the Leprechaun Hat makes you lucky. The rarer the hat, the stronger the buff.
 
 Buffs appear as a normal buff icon while the hat is worn and vanish the moment you take it off. Nothing is written to your save, so uninstalling is always safe.
 
