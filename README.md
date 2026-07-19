@@ -13,7 +13,7 @@ Makes every hat in the game actually do something. Each of the 121 obtainable va
 
 Buffs appear as a normal buff icon while the hat is worn and vanish the moment you take it off. Nothing is written to your save, so uninstalling is always safe.
 
-Everything is configurable through `config.json`: rebalance any hat, or add entries for custom hats from other mods (wear a hat and press `F5` in-game to log its ID to the SMAPI console). See the [mod's own README](UsefulHats/README.md) for the full configuration guide.
+Everything is configurable through `config.json`: rebalance any hat, or add entries for custom hats from other mods (wear a hat and press `F5` in-game to log its ID to the SMAPI console). See the [mod's own README](UsefulHats/README.md) for the full configuration guide. Available on [Nexus](https://www.nexusmods.com/stardewvalley/mods/49384).
 
 **Requires:** Stardew Valley 1.6+, [SMAPI](https://smapi.io/) 4.0+
 
