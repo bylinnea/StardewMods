@@ -2,7 +2,7 @@
 
 A [Stardew Valley](https://www.stardewvalley.net/) mod that makes every hat in the game actually do something. Available on [Nexus](https://www.nexusmods.com/stardewvalley/mods/49384). Each of the 121 obtainable vanilla hats gives a small themed stat buff while worn. The Fishing Hat helps you fish, the Hard Hat protects you in the mines, and the Leprechaun Hat makes you lucky. The rarer the hat, the stronger the buff.
 
-Buffs appear as a normal buff icon while the hat is worn and vanish the moment you take it off. Nothing is written to your save, so uninstalling is always safe.
+Buffs appear as a normal buff icon while the hat is worn and vanish the moment you take it off. Every hat's tooltip lists its stats, so you always know what you're putting on. Nothing is written to your save, so uninstalling is always safe.
 
 ## Requirements
 
@@ -43,6 +43,17 @@ Note: `MaxStamina` is in raw energy points (20–40 is noticeable) and `Magnetic
 ## Building from source
 
 The mod is a standard SMAPI C# project. Clone the repo, open the folder in your IDE, and run `dotnet build`. [ModBuildConfig](https://www.nuget.org/packages/Pathoschild.Stardew.ModBuildConfig) finds your game install and deploys the mod automatically. A release zip is generated under `bin/Release` when building with `-c Release`.
+
+## Changelog
+
+### 1.1.0
+
+- Hat tooltips now list the hat's stats in the description, one per line.
+- Tooltip text is generated from your `config.json`, so custom balance and custom hats are reflected automatically.
+
+### 1.0.0
+
+- Initial release. Themed, rarity-scaled stat buffs for all 121 obtainable vanilla hats, fully configurable, with custom hat support.
 
 ## Credits
 
