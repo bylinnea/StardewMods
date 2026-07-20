@@ -24,6 +24,8 @@ namespace UsefulHats
             helper.Events.Input.ButtonPressed += this.OnButtonPressed;
 
             helper.Events.GameLoop.UpdateTicked += this.OnUpdateTicked;
+
+            helper.Events.Content.AssetRequested += this.OnAssetRequested;
         }
 
         private void OnUpdateTicked(object? sender, UpdateTickedEventArgs e)
@@ -76,6 +78,41 @@ namespace UsefulHats
                 this.Monitor.Log($"Applied {wornHat.DisplayName} buff",LogLevel.Debug);
                 lastAppliedHatId = wornHatId;
             }
+        }
+        private void OnAssetRequested(object? sender, AssetRequestedEventArgs e)
+        {
+            if (!e.NameWithoutLocale.IsEquivalentTo("Data/hats"))
+                return;
+
+            e.Edit(asset =>
+            {
+                var data = asset.AsDictionary<string, string>().Data;
+
+                foreach (var pair in this.Config.Hats)
+                {
+                    string hatId = pair.Key;
+                    HatStats stats = pair.Value;
+
+                    if (!data.TryGetValue(hatId, out string? entry))
+                        continue;
+
+                    string[] fields = entry.Split('/');
+
+                    List<string> parts = new();
+
+                    foreach ((string name, int value) in stats.GetStats())
+                    {
+                        if (value != 0)
+                            parts.Add((value > 0 ? "+" : "") + $"{value} {name}");
+                    }
+
+                    if (parts.Count == 0)
+                        continue;
+
+                    fields[1] += "\n" + string.Join("\n", parts);
+                    data[hatId] = string.Join("/", fields);
+                }
+            });
         }
         private void OnButtonPressed(object? sender, ButtonPressedEventArgs e)
         {

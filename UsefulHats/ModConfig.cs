@@ -167,5 +167,21 @@ namespace UsefulHats
         public int MaxStamina { get; set; }
         public int MagneticRadius { get; set; }
         public int Immunity { get; set; }
+
+        public IEnumerable<(string Name, int Value)> GetStats()
+        {
+            yield return ("Farming", this.Farming);
+            yield return ("Fishing", this.Fishing);
+            yield return ("Mining", this.Mining);
+            yield return ("Foraging", this.Foraging);
+            yield return ("Luck", this.Luck);
+            yield return ("Attack", this.Attack);
+            yield return ("Defense", this.Defense);
+            yield return ("Immunity", this.Immunity);
+            yield return ("Speed", this.Speed);
+            yield return ("Max Energy", this.MaxStamina);
+            yield return ("Magnetism", this.MagneticRadius);
+        }
     }
+    
 }
