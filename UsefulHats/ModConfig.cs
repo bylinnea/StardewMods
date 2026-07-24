@@ -57,7 +57,7 @@ namespace UsefulHats
             ["73"] = new HatStats { Mining = 1, Farming = 1, Foraging = 1 },
             ["74"] = new HatStats { Immunity = 3 },
             ["82"] = new HatStats { Luck = 2, Speed = 1, Immunity = 1 },
-            ["LeprechaunHat"] = new HatStats { Luck = 3 },
+            ["LeprechuanHat"] = new HatStats { Luck = 3 },
             ["MysteryHat"] = new HatStats { Luck = 2 },
 
             // Foraging & nature hats
